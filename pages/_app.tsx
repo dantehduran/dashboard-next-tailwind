@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/sidebar/Sidebar';
 import { useState } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				isSidebarCollapsed ? ' sidebar-collapsed' : ' '
 			}`}
 		>
-			<div className='w-1/5 sidebar-collapsed:w-16'>
+			<div className='w-64 sidebar-collapsed:w-20'>
 				<Sidebar
 					setIsSidebarCollapsed={setIsSidebarCollapsed}
 					isSidebarCollapsed={isSidebarCollapsed}
