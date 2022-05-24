@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin');
 module.exports = {
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx}',
@@ -6,5 +7,16 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		plugin(({ addVariant, e }) => {
+			addVariant('sidebar-collapsed', ({ modifySelectors, separator }) => {
+				modifySelectors(
+					({ className }) =>
+						`.sidebar-collapsed .${e(
+							`sidebar-collapsed${separator}${className}`,
+						)}`,
+				);
+			});
+		}),
+	],
 };
