@@ -2,6 +2,7 @@ import { HiOutlineColorSwatch } from 'react-icons/hi';
 import { BiSidebar } from 'react-icons/bi';
 import sidebarLinks from '../../config/SidebarLinks';
 import NavLink from './NavLink';
+import NavLinkGroup from './NavLinkGroup';
 
 interface Props {
 	setIsSidebarCollapsed: (setIsSidebarCollapsed: boolean) => void;
@@ -30,9 +31,13 @@ const Sidebar = ({ setIsSidebarCollapsed, isSidebarCollapsed }: Props) => {
 				</button>
 			</div>
 			<div className='space-y-2 px-4 pt-4'>
-				{sidebarLinks.map(link => (
-					<NavLink key={link.label} {...link} />
-				))}
+				{sidebarLinks.map(link => {
+					return link.sublinks && link.sublinks.length > 0 ? (
+						<NavLinkGroup key={link.label} {...link} />
+					) : (
+						<NavLink key={link.label} {...link} />
+					);
+				})}
 			</div>
 		</div>
 	);

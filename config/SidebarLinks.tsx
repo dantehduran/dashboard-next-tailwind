@@ -1,10 +1,6 @@
-import { BiGroup, BiLayout, BiPackage } from 'react-icons/bi';
+import { BiCog, BiGroup, BiLayout, BiPackage } from 'react-icons/bi';
+import { Link } from '../types/sidebar';
 
-interface Link {
-	label: string;
-	route: string;
-	Icon: React.FunctionComponent;
-}
 const links: Link[] = [
 	{
 		label: 'Dashboard',
@@ -20,6 +16,21 @@ const links: Link[] = [
 		label: 'Projects',
 		route: '/projects',
 		Icon: () => <BiPackage className='h-6 w-6 shrink-0' />,
+	},
+	{
+		label: 'Settings',
+		Icon: () => <BiCog className='h-6 w-6 shrink-0' />,
+		route: '/settings',
+		sublinks: [
+			{
+				label: 'Profile',
+				route: '/settings/profile',
+			},
+			{
+				label: 'Config',
+				route: '/settings/config',
+			},
+		],
 	},
 ];
 export default links;
