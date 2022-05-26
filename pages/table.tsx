@@ -1,11 +1,13 @@
+import Table from '@/components/Table';
 import type { NextPage } from 'next';
 
-const Table: NextPage = () => {
+const TablePage: NextPage = () => {
 	return (
-		<div>
-			<h2 className='text-xl text-stone-600'>Table</h2>
+		<div className='container  p-4'>
+			<h2 className='pb-4 text-3xl font-bold text-zinc-700'>Table</h2>
+			<Table />
 		</div>
 	);
 };
 
-export default Table;
+export default TablePage;

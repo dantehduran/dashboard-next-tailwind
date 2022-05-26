@@ -1,13 +1,13 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import Sidebar from '../components/sidebar/Sidebar';
 import { useState } from 'react';
+import Sidebar from '@/components/sidebar/Sidebar';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
 	return (
 		<div
-			className={`flex min-h-screen space-x-2 overflow-hidden bg-zinc-50 p-2 ${
+			className={`flex min-h-screen space-x-4 overflow-hidden bg-white p-2 ${
 				isSidebarCollapsed ? ' sidebar-collapsed' : ' '
 			}`}
 		>
