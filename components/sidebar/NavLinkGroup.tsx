@@ -8,7 +8,6 @@ const NavLinkGroup = ({ label, Icon, sublinks, route }: PropLink) => {
 	const { pathname } = useRouter();
 	const [isOpen, setIsOpen] = useState(false);
 	const handleOpen = () => {
-		console.log(isOpen);
 		setIsOpen(!isOpen);
 	};
 	return (
@@ -34,7 +33,7 @@ const NavLinkGroup = ({ label, Icon, sublinks, route }: PropLink) => {
 					<BiChevronUp className='h-4 w-4 sidebar-collapsed:hidden' />
 				)}
 			</button>
-			<div className='relative block sidebar-collapsed:hidden'>
+			<div className='relative block pb-2 sidebar-collapsed:hidden'>
 				<div
 					className={`ml-4 space-y-2 border-l-4 border-zinc-700 ${
 						!isOpen && 'hidden'
