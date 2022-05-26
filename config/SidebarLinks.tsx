@@ -1,4 +1,10 @@
-import { BiCog, BiGroup, BiLayout, BiPackage } from 'react-icons/bi';
+import {
+	BiCog,
+	BiGroup,
+	BiLayout,
+	BiPackage,
+	BiSpreadsheet,
+} from 'react-icons/bi';
 import { Link } from '../types/sidebar';
 
 const links: Link[] = [
@@ -6,6 +12,11 @@ const links: Link[] = [
 		label: 'Dashboard',
 		route: '/',
 		Icon: () => <BiLayout className='h-6 w-6 shrink-0' />,
+	},
+	{
+		label: 'Table',
+		route: '/table',
+		Icon: () => <BiSpreadsheet className='h-6 w-6 shrink-0' />,
 	},
 	{
 		label: 'Team',

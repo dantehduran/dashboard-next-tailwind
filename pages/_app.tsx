@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 				/>
 			</div>
 			<div className='w-full'>
-				<div>nav</div>
 				<div>
 					<Component {...pageProps} />
 				</div>
