@@ -1,4 +1,6 @@
 import '@/styles/globals.css';
+import '@/styles/responsive-table.css';
+
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
 import Sidebar from '@/components/sidebar/Sidebar';

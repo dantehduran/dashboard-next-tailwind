@@ -1,75 +1,81 @@
+const headers = ['Product Name', 'Color', 'Category', 'Price'];
+const data = [
+	{
+		name: 'Apple MacBook Pro 17"',
+		color: 'Silver',
+		category: 'Laptop',
+		price: '$2,000.00',
+	},
+	{
+		name: 'Microsoft Surface Pro 4',
+		color: 'Black',
+		category: 'Laptop',
+		price: '$1,990.00',
+	},
+	{
+		name: 'Apple iPad Pro',
+		color: 'Silver',
+		category: 'Tablet',
+		price: '$1,000.00',
+	},
+	{
+		name: 'Apple iPhone X',
+		color: 'Black',
+		category: 'Phone',
+		price: '$1,000.00',
+	},
+	{
+		name: 'Apple Watch Series 3',
+		color: 'Silver',
+		category: 'Watch',
+		price: '$1,000.00',
+	},
+	{
+		name: 'Magic Mouse',
+		color: 'Silver',
+		category: 'Mouse',
+		price: '$90.00',
+	},
+];
+
 const Table = () => {
 	return (
-		<div className='relative overflow-x-auto rounded-2xl shadow-md'>
-			<table className='w-full text-left text-sm text-zinc-500'>
-				<thead className=' bg-zinc-100  text-xs  '>
+		<div className='relative  rounded-2xl shadow-md'>
+			<table className=' w-full text-left text-sm text-zinc-500'>
+				<thead className=' hidden  bg-zinc-100 text-xs md:table-header-group '>
 					<tr>
-						<th scope='col' className='px-6 py-3'>
-							Product name
-						</th>
-						<th scope='col' className='px-6 py-3'>
-							Color
-						</th>
-						<th scope='col' className='px-6 py-3'>
-							Category
-						</th>
-						<th scope='col' className='px-6 py-3'>
-							Price
-						</th>
+						{headers.map((header, index) => (
+							<th key={index} scope='col' className='px-6 py-3'>
+								{header}
+							</th>
+						))}
 						<th scope='col' className='px-6 py-3'>
 							Options
 						</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr className='border-b bg-white text-left '>
-						<th
-							scope='row'
-							className='whitespace-nowrap px-6 py-4 font-medium '
+					{data.map((row, index) => (
+						<tr
+							key={index}
+							className='block border-b bg-white text-left md:table-row'
 						>
-							Apple MacBook Pro 17"
-						</th>
-						<td className='px-6 py-4'>Sliver</td>
-						<td className='px-6 py-4'>Laptop</td>
-						<td className='px-6 py-4'>$2999</td>
-						<td className='px-6 py-4 '>
-							<span className='font-medium text-blue-600 hover:underline '>
-								Edit
-							</span>
-						</td>
-					</tr>
-					<tr className='border-b bg-white text-left'>
-						<th
-							scope='row'
-							className='whitespace-nowrap px-6 py-4 font-medium '
-						>
-							Microsoft Surface Pro
-						</th>
-						<td className='px-6 py-4'>White</td>
-						<td className='px-6 py-4'>Laptop PC</td>
-						<td className='px-6 py-4'>$1999</td>
-						<td className='px-6 py-4 '>
-							<span className='font-medium text-blue-600 hover:underline '>
-								Edit
-							</span>
-						</td>
-					</tr>
-					<tr className='bg-white text-left '>
-						<th
-							scope='row'
-							className='whitespace-nowrap px-6 py-4 font-medium '
-						>
-							Magic Mouse 2
-						</th>
-						<td className='px-6 py-4'>Black</td>
-						<td className='px-6 py-4'>Accessories</td>
-						<td className='px-6 py-4'>$99</td>
-						<td className='px-6 py-4 '>
-							<span className='font-medium text-blue-600 hover:underline dark:text-blue-500'>
-								Edit
-							</span>
-						</td>
-					</tr>
+							{Object.values(row).map((value, rowindex) => (
+								<td
+									key={rowindex}
+									className='flex px-4 py-2 md:table-cell md:px-6 md:py-4'
+								>
+									{value}
+								</td>
+							))}
+
+							<td className='flex  md:table-cell md:px-6 md:py-4'>
+								<span className='font-medium text-blue-600 hover:underline '>
+									Edit
+								</span>
+							</td>
+						</tr>
+					))}
 				</tbody>
 			</table>
 		</div>
