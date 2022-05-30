@@ -1,4 +1,5 @@
 import Table from '@/components/Table';
+import TableResponsive from '@/components/TableResponsive';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import type { NextPage } from 'next';
 const headers = ['Product Name', 'Color', 'Category', 'Price'];
@@ -54,6 +55,7 @@ const TablePage: NextPage = () => {
 			<h3 className='pb-2 text-xl text-zinc-600'>
 				Responsive table transform rows in to cards {breakpoint}
 			</h3>
+			<TableResponsive data={data} headers={headers} />
 		</div>
 	);
 };

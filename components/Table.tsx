@@ -1,7 +1,10 @@
+interface Row {
+	[key: string]: string | number;
+}
+
 interface Props {
 	headers: string[];
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	data: any[];
+	data: Row[];
 }
 
 const Table = ({ data, headers }: Props) => {
