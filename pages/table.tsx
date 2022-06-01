@@ -1,4 +1,5 @@
 import Table from '@/components/Table';
+import TableGrid from '@/components/TableGrid';
 import TableResponsive from '@/components/TableResponsive';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import type { NextPage } from 'next';
@@ -56,6 +57,11 @@ const TablePage: NextPage = () => {
 				Responsive table transform rows in to cards {breakpoint}
 			</h3>
 			<TableResponsive data={data} headers={headers} />
+			<br />
+			<h3 className='pb-2 text-xl text-zinc-600'>
+				Responsive table using grid {breakpoint}
+			</h3>
+			<TableGrid data={data} headers={headers} />
 		</div>
 	);
 };

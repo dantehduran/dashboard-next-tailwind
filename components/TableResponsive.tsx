@@ -19,7 +19,7 @@ const TableResponsive = ({ data, headers }: Props) => {
 						{headers.map((header, index) => (
 							<th
 								key={index}
-								className='border-b p-3 text-left last:border-b-0 sm:border-b-0 sm:px-6 sm:py-3'
+								className='truncate border-b p-3 text-left last:border-b-0 sm:border-b-0 sm:px-6 sm:py-3'
 							>
 								{header}
 							</th>
@@ -31,12 +31,12 @@ const TableResponsive = ({ data, headers }: Props) => {
 				{data.map((row, index) => (
 					<tr
 						key={index}
-						className='flex-no wrap mb-2 flex flex-col border sm:mb-0 sm:table-row sm:border-b'
+						className='mb-2 flex flex-col flex-nowrap border sm:mb-0 sm:table-row sm:border-b'
 					>
 						{Object.values(row).map((value, valueindex) => (
 							<td
 								key={valueindex}
-								className=' border-b p-3 last:border-b-0 sm:border-0 sm:px-6 sm:py-4 '
+								className='truncate border-b p-3 last:border-b-0 sm:border-0 sm:px-6 sm:py-4'
 							>
 								{value}
 							</td>
