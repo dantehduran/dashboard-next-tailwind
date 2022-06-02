@@ -1,34 +1,56 @@
 import '@/styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Sidebar from '@/components/sidebar/Sidebar';
 import { BiMenu } from 'react-icons/bi';
+import useBreakpoint from '@/hooks/useBreakpoint';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
+	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const breakpoint = useBreakpoint();
+	useEffect(() => {
+		if (breakpoint !== 'md' && breakpoint !== 'sm') setIsSidebarOpen(false);
+	}, [breakpoint]);
 	return (
 		<div
-			className={`relative flex h-screen space-x-4 overflow-hidden  bg-white p-2 ${
+			className={`relative flex h-screen space-x-4 overflow-hidden bg-white p-2 ${
 				isSidebarCollapsed ? ' sidebar-collapsed' : ' '
-			}`}
+			} `}
 		>
-			<div className='sticky  hidden w-64 overflow-x-auto sidebar-collapsed:w-20 md:inline-block'>
+			<div
+				className={`sticky overflow-x-auto sidebar-collapsed:w-20 md:inline-block md:w-64 ${
+					isSidebarOpen ? 'flex-1' : 'hidden'
+				}`}
+			>
 				<Sidebar
 					setIsSidebarCollapsed={setIsSidebarCollapsed}
 					isSidebarCollapsed={isSidebarCollapsed}
 				/>
 			</div>
 
-			<div className='relative flex-1 overflow-auto'>
+			<div
+				className={`relative   overflow-auto ${
+					isSidebarOpen ? 'hidden' : 'flex-1'
+				}`}
+			>
 				<Component {...pageProps} />
-				<button
-					aria-label='menu'
-					className='fixed top-4 right-6 z-20 block md:hidden'
-				>
-					<BiMenu className='h-8 w-8 text-zinc-800' />
-				</button>
 			</div>
+			<button
+				aria-label='menu'
+				className='z-80 fixed top-4 right-6 block md:hidden'
+				onClick={() => {
+					setIsSidebarOpen(!isSidebarOpen);
+					setIsSidebarCollapsed(false);
+				}}
+			>
+				<BiMenu
+					className={`h-8 w-8  ${
+						isSidebarOpen ? 'text-zinc-200' : 'text-zinc-800'
+					}`}
+				/>
+			</button>
 		</div>
 	);
 }
