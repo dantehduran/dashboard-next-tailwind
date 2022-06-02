@@ -1,6 +1,4 @@
-import Table from '@/components/Table';
-import TableGrid from '@/components/TableGrid';
-import TableResponsive from '@/components/TableResponsive';
+import { Table, TableResponsive, TableGrid } from '@/components/table';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import type { NextPage } from 'next';
 const headers = ['Product Name', 'Color', 'Category', 'Price'];
