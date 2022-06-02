@@ -11,7 +11,7 @@ interface Props {
 
 const Sidebar = ({ setIsSidebarCollapsed, isSidebarCollapsed }: Props) => {
 	return (
-		<div className='h-full overflow-hidden rounded-xl bg-zinc-800 text-zinc-400'>
+		<div className='h-full rounded-xl bg-zinc-800 text-zinc-400'>
 			<div className='flex items-center justify-between py-4 px-4 text-zinc-200 sidebar-collapsed:justify-center'>
 				<div className='flex space-x-2 sidebar-collapsed:hidden'>
 					<HiOutlineColorSwatch className='h-12 w-12 rounded-lg bg-white text-zinc-800 ' />

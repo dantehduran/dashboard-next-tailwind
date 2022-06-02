@@ -8,11 +8,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
 	return (
 		<div
-			className={`flex min-h-screen space-x-4 overflow-hidden bg-white p-2 ${
+			className={`flex h-screen space-x-4 overflow-hidden bg-white p-2 ${
 				isSidebarCollapsed ? ' sidebar-collapsed' : ' '
 			}`}
 		>
-			<div className='w-64 sidebar-collapsed:w-20'>
+			<div className='h sticky w-64 sidebar-collapsed:w-20'>
 				<Sidebar
 					setIsSidebarCollapsed={setIsSidebarCollapsed}
 					isSidebarCollapsed={isSidebarCollapsed}
