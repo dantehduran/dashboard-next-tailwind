@@ -21,7 +21,8 @@
 			"@/config/*": ["config/*"],
 			"@/styles/*": ["styles/*"],
 			"@/utils/*": ["utils/*"],
-			"@/hooks/*": ["hooks/*"]
+			"@/hooks/*": ["hooks/*"],
+			"@/context/*": ["context/*"]
 		}
 	},
 

@@ -1,14 +1,19 @@
 import '@/styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Sidebar from '@/components/sidebar/Sidebar';
 import { BiMenu } from 'react-icons/bi';
 import useBreakpoint from '@/hooks/useBreakpoint';
+import { useSidebar } from '@/context/uiStore';
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
-	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const {
+		isSidebarCollapsed,
+		setIsSidebarCollapsed,
+		isSidebarOpen,
+		setIsSidebarOpen,
+	} = useSidebar(state => state);
 	const breakpoint = useBreakpoint();
 	useEffect(() => {
 		if (breakpoint !== 'md' && breakpoint !== 'sm') setIsSidebarOpen(false);
@@ -24,14 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 					isSidebarOpen ? 'flex-1' : 'hidden'
 				}`}
 			>
-				<Sidebar
-					setIsSidebarCollapsed={setIsSidebarCollapsed}
-					isSidebarCollapsed={isSidebarCollapsed}
-				/>
+				<Sidebar />
 			</div>
-
 			<div
-				className={`relative   overflow-auto ${
+				className={`relative overflow-auto ${
 					isSidebarOpen ? 'hidden' : 'flex-1'
 				}`}
 			>

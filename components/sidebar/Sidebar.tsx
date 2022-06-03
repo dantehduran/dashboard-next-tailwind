@@ -3,13 +3,21 @@ import { BiSidebar } from 'react-icons/bi';
 import sidebarLinks from '../../config/SidebarLinks';
 import NavLink from './NavLink';
 import NavLinkGroup from './NavLinkGroup';
+import { useSidebar } from '@/context/uiStore';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-interface Props {
-	setIsSidebarCollapsed: (setIsSidebarCollapsed: boolean) => void;
-	isSidebarCollapsed: boolean;
-}
-
-const Sidebar = ({ setIsSidebarCollapsed, isSidebarCollapsed }: Props) => {
+const Sidebar = () => {
+	const {
+		isSidebarCollapsed,
+		setIsSidebarCollapsed,
+		isSidebarOpen,
+		setIsSidebarOpen,
+	} = useSidebar(state => state);
+	const { pathname } = useRouter();
+	useEffect(() => {
+		if (isSidebarOpen) setIsSidebarOpen(false);
+	}, [pathname]);
 	return (
 		<div className='min-h-screen rounded-xl bg-zinc-800 text-zinc-400'>
 			<div className='flex items-center justify-between py-4 px-4 text-zinc-200 sidebar-collapsed:justify-center'>
