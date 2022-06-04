@@ -19,7 +19,7 @@ const Sidebar = () => {
 		if (isSidebarOpen) setIsSidebarOpen(false);
 	}, [pathname]);
 	return (
-		<div className='min-h-screen rounded-xl bg-zinc-800 text-zinc-400'>
+		<div className='min-h-screen rounded-xl bg-zinc-800 text-zinc-400 md:min-h-full'>
 			<div className='flex items-center justify-between py-4 px-4 text-zinc-200 sidebar-collapsed:justify-center'>
 				<div className='flex space-x-2 sidebar-collapsed:hidden'>
 					<HiOutlineColorSwatch className='h-12 w-12 rounded-lg bg-white text-zinc-800 ' />
@@ -39,7 +39,7 @@ const Sidebar = () => {
 					<BiSidebar className='h-6 w-6 shrink-0 text-zinc-400' />
 				</button>
 			</div>
-			<div className='space-y-2 px-4 pt-4'>
+			<div className='space-y-2 p-4'>
 				{sidebarLinks.map(link => {
 					return link.sublinks && link.sublinks.length > 0 ? (
 						<NavLinkGroup key={link.label} {...link} />

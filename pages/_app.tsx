@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<Sidebar />
 			</div>
 			<div
-				className={`relative overflow-auto ${
+				className={`relative overflow-auto scrollbar-thin scrollbar-track-zinc-100 scrollbar-thumb-zinc-300  ${
 					isSidebarOpen ? 'hidden' : 'flex-1'
 				}`}
 			>

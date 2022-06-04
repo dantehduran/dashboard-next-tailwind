@@ -8,6 +8,7 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [
+		require('tailwind-scrollbar'),
 		plugin(({ addVariant, e }) => {
 			addVariant('sidebar-collapsed', ({ modifySelectors, separator }) => {
 				modifySelectors(
