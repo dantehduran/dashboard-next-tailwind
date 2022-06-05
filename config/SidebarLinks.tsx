@@ -17,6 +17,20 @@ const links: Link[] = [
 		label: 'Table',
 		route: '/table',
 		Icon: () => <BiSpreadsheet className='h-6 w-6 shrink-0' />,
+		sublinks: [
+			{
+				label: 'Simple Table',
+				route: '/table/simple',
+			},
+			{
+				label: 'Full Responsive Table',
+				route: '/table/responsive',
+			},
+			{
+				label: 'Grid Table',
+				route: '/table/grid',
+			},
+		],
 	},
 	{
 		label: 'Team',
