@@ -1,6 +1,4 @@
-interface Row {
-	[key: string]: string | number;
-}
+import { Row } from '@/types/table';
 
 interface Props {
 	headers: string[];
