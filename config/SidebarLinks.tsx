@@ -1,4 +1,5 @@
 import {
+	BiBook,
 	BiCog,
 	BiGroup,
 	BiLayout,
@@ -31,6 +32,11 @@ const links: Link[] = [
 				route: '/table/grid',
 			},
 		],
+	},
+	{
+		label: 'Pagination',
+		route: '/pagination',
+		Icon: () => <BiBook className='h-6 w-6 shrink-0' />,
 	},
 	{
 		label: 'Team',
