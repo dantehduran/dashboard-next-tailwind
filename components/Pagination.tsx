@@ -37,13 +37,18 @@ const Pagination = ({
 
 	const lastPage = paginationRange[paginationRange.length - 1];
 	return (
-		<ul className={clsx('mt-3 inline-flex -space-x-px', className)}>
+		<ul
+			className={clsx(
+				'mt-3 flex justify-between -space-x-px sm:inline-flex',
+				className,
+			)}
+		>
 			<li>
 				<button
 					type='button'
 					onClick={onPrevious}
 					className={clsx(
-						'ml-0 rounded-l-lg border border-zinc-300 bg-white py-2 px-3 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700',
+						'ml-0 rounded-full border border-zinc-300 bg-white py-2 px-3 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 sm:rounded-r-2xl',
 						currentPage === 1 && 'cursor-not-allowed opacity-50',
 					)}
 					disabled={currentPage === 1}
@@ -54,12 +59,14 @@ const Pagination = ({
 			{paginationRange.map(pageNumber => {
 				if (pageNumber === DOTS) {
 					return (
-						<li className='py-2 px-3 leading-tight text-zinc-500'>&#8230;</li>
+						<li className='hidden border border-zinc-300 py-2 px-3 leading-tight text-zinc-500 sm:inline-block'>
+							&#8230;
+						</li>
 					);
 				}
 
 				return (
-					<li key={pageNumber}>
+					<li key={pageNumber} className='hidden sm:inline-block'>
 						<button
 							type='button'
 							className={clsx(
@@ -80,7 +87,7 @@ const Pagination = ({
 				<button
 					type='button'
 					className={clsx(
-						'ml-0 rounded-l-lg border border-zinc-300 bg-white py-2 px-3 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700',
+						'ml-0 rounded-full border border-zinc-300 bg-white py-2 px-3 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 sm:rounded-l-2xl',
 						currentPage === lastPage && 'cursor-not-allowed opacity-50',
 					)}
 					disabled={currentPage === lastPage}
