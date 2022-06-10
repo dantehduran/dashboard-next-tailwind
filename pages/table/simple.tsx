@@ -3,7 +3,7 @@ import { Table } from '@/components/table';
 import { data, headers } from '@/config/TableData';
 import { NextPage } from 'next';
 import { useMemo, useState } from 'react';
-const PageSize = 3;
+const PageSize = 5;
 const SimpleTablePage: NextPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const currentTableData = useMemo(() => {

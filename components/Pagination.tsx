@@ -1,5 +1,6 @@
 import { usePagination } from '@/hooks/usePagination';
 import clsx from 'clsx';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 const DOTS = '...';
 type Props = {
 	onPageChange: (page: number) => void;
@@ -100,4 +101,76 @@ const Pagination = ({
 	);
 };
 
-export { Pagination };
+const PaginationWithIcons = () => {
+	return (
+		<div className=' flex items-center justify-between'>
+			<div className='hidden text-sm text-zinc-600 sm:inline-block'>
+				Showing <span className='font-semibold text-zinc-800'>1</span> to{' '}
+				<span className='font-semibold text-zinc-800'>10</span> of{' '}
+				<span className='font-semibold text-zinc-800'>97</span> results
+			</div>
+			<ul className='flex flex-1 justify-between -space-x-px sm:inline-flex sm:justify-end'>
+				<li>
+					<button
+						type='button'
+						aria-label='Previous'
+						className='ml-0 rounded-full border border-zinc-300 bg-white px-2 py-2 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 sm:rounded-r-2xl'
+					>
+						<BiChevronLeft className='h-5 w-5 shrink-0' />
+					</button>
+				</li>
+				{[1, 2, 3, 4, 5].map(pageNumber => {
+					return (
+						<li key={pageNumber} className='hidden sm:inline-block'>
+							<button
+								type='button'
+								className={clsx(
+									'border border-zinc-300 bg-white py-2 px-3 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 ',
+									{
+										'bg-zinc-100 font-semibold text-zinc-600': pageNumber === 3,
+									},
+								)}
+							>
+								{pageNumber}
+							</button>
+						</li>
+					);
+				})}
+				<li>
+					<button
+						type='button'
+						aria-label='Previous'
+						className='ml-0 rounded-full border border-zinc-300 bg-white px-2 py-2 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 sm:rounded-l-2xl'
+					>
+						<BiChevronRight className='h-5 w-5 shrink-0' />
+					</button>
+				</li>
+			</ul>
+		</div>
+	);
+};
+
+const PaginationButtons = () => {
+	return (
+		<div className='flex items-center justify-between sm:justify-end'>
+			<button
+				type='button'
+				aria-label='Previous'
+				className='ml-0  inline-flex items-center rounded-full border border-zinc-300 bg-white px-4 py-2  leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 sm:rounded-r-2xl'
+			>
+				<BiChevronLeft className='mr-2 h-5 w-5 shrink-0' />
+				Previous
+			</button>
+			<button
+				type='button'
+				aria-label='Previous'
+				className='ml-0 inline-flex items-center rounded-full border border-zinc-300 bg-white px-4 py-2 leading-tight text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 sm:rounded-l-2xl'
+			>
+				Next
+				<BiChevronRight className='ml-2 h-5 w-5 shrink-0' />
+			</button>
+		</div>
+	);
+};
+
+export { Pagination, PaginationWithIcons, PaginationButtons };
