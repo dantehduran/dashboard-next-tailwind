@@ -9,7 +9,7 @@ const TableResponsivePage: NextPage = () => {
 				Responsive Table
 			</h2>
 			<h3 className='pb-4 text-xl text-zinc-600'>A fully responsive table</h3>
-			<TableResponsive data={data} headers={headers} />
+			<TableResponsive data={data.slice(0, 8)} headers={headers} />
 		</div>
 	);
 };

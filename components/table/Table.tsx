@@ -7,7 +7,7 @@ interface Props {
 
 const Table = ({ data, headers }: Props) => {
 	return (
-		<div className='relative overflow-x-auto rounded-2xl shadow-md'>
+		<div className='relative overflow-x-auto rounded-2xl rounded-b-none shadow-md'>
 			<table className='w-full text-left text-sm text-zinc-500'>
 				<thead className='bg-zinc-100 text-xs '>
 					<tr>

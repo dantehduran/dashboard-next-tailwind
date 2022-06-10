@@ -9,7 +9,7 @@ const GridTablePage: NextPage = () => {
 			<h3 className='pb-4 text-xl text-zinc-600'>
 				A fully responsive table using grid
 			</h3>
-			<TableGrid data={data} headers={headers} />
+			<TableGrid data={data.slice(0, 8)} headers={headers} />
 		</div>
 	);
 };
