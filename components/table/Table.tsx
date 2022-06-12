@@ -7,16 +7,16 @@ interface Props {
 
 const Table = ({ data, headers }: Props) => {
 	return (
-		<div className='relative overflow-x-auto rounded-2xl rounded-b-none shadow-md'>
+		<div className='relative overflow-x-auto rounded-xl  shadow-md'>
 			<table className='w-full text-left text-sm text-zinc-500'>
 				<thead className='bg-zinc-100 text-xs '>
 					<tr>
 						{headers.map((header, index) => (
-							<th key={index} scope='col' className='px-6 py-3'>
+							<th key={index} scope='col' className='px-6 py-3 capitalize'>
 								{header}
 							</th>
 						))}
-						<th scope='col' className='px-6 py-3'>
+						<th scope='col' className='px-6 py-3 text-center'>
 							Options
 						</th>
 					</tr>

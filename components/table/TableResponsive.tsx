@@ -7,7 +7,7 @@ interface Props {
 
 const TableResponsive = ({ data, headers }: Props) => {
 	return (
-		<div className='overflow-hidden sm:rounded-2xl sm:rounded-b-none'>
+		<div className='overflow-hidden sm:rounded-xl sm:rounded-b-none'>
 			<table className='flex w-full flex-row flex-nowrap text-zinc-500  sm:inline-table sm:bg-white sm:text-xs sm:shadow-md'>
 				<thead className='sm:border-x sm:border-t sm:bg-zinc-100'>
 					{data.map((_, index) => (
