@@ -6,7 +6,7 @@ interface Props {
 }
 const TableGrid = ({ data, headers }: Props) => {
 	return (
-		<div className='flex text-sm md:rounded-xl md:rounded-b-none md:shadow-md'>
+		<div className='flex text-sm md:rounded-xl md:shadow-md'>
 			<ol className=' grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:inline-block'>
 				{/* <!-- The first list item is the header of the table --> */}
 				<li className='item hidden rounded-t-2xl text-xs font-bold text-zinc-500 md:grid md:grid-cols-4 md:first:bg-zinc-100 '>
