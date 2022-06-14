@@ -1,9 +1,9 @@
 import {
 	BiBook,
 	BiCog,
+	BiColumns,
 	BiGroup,
 	BiLayout,
-	BiPackage,
 	BiSpreadsheet,
 } from 'react-icons/bi';
 import { Link } from '../types/sidebar';
@@ -17,7 +17,7 @@ const links: Link[] = [
 	{
 		label: 'Table',
 		route: '/table',
-		Icon: () => <BiSpreadsheet className='h-6 w-6 shrink-0' />,
+		Icon: () => <BiColumns className='h-6 w-6 shrink-0' />,
 		sublinks: [
 			{
 				label: 'Simple Table',
@@ -44,9 +44,9 @@ const links: Link[] = [
 		Icon: () => <BiGroup className='h-6 w-6 shrink-0' />,
 	},
 	{
-		label: 'Projects',
-		route: '/projects',
-		Icon: () => <BiPackage className='h-6 w-6 shrink-0' />,
+		label: 'Forms',
+		route: '/forms',
+		Icon: () => <BiSpreadsheet className='h-6 w-6 shrink-0' />,
 	},
 	{
 		label: 'Settings',
