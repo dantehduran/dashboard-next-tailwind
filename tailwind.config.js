@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin');
+/** @type {import('tailwindcc').Config} */
 module.exports = {
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx}',
