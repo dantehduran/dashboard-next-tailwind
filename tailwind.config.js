@@ -9,6 +9,7 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [
+		require('@tailwindcss/forms'),
 		require('tailwind-scrollbar'),
 		plugin(({ addVariant, e }) => {
 			addVariant('sidebar-collapsed', ({ modifySelectors, separator }) => {
