@@ -1,4 +1,4 @@
-import Input from '@/components/Input';
+import { Input, Select } from '@/components/Input';
 import type { NextPage } from 'next';
 
 const Forms: NextPage = () => {
@@ -30,7 +30,7 @@ const Forms: NextPage = () => {
 					</div>
 				</div>
 				<div className='flex'>
-					<div className='basis-2/5 bg-blue-300 '>
+					<div className='basis-2/5  '>
 						<h3 className='text-xl font-semibold text-zinc-700'>
 							Professional info
 						</h3>
@@ -38,7 +38,12 @@ const Forms: NextPage = () => {
 							Provide your professional info
 						</h4>
 					</div>
-					<div className='basis-3/5 bg-red-400'>inputs</div>
+					<div className='basis-3/5 '>
+						<Select
+							label='lenguage'
+							options={['english', 'spanish', 'german', 'french']}
+						/>
+					</div>
 				</div>
 				<div className='flex'>
 					<span>buttons</span>
