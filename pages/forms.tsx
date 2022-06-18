@@ -1,4 +1,4 @@
-import { Input, Select } from '@/components/Input';
+import { Dropdown, Input } from '@/components/Input';
 import type { NextPage } from 'next';
 
 const Forms: NextPage = () => {
@@ -39,7 +39,7 @@ const Forms: NextPage = () => {
 						</h4>
 					</div>
 					<div className='basis-3/5 '>
-						<Select
+						<Dropdown
 							label='lenguage'
 							options={['english', 'spanish', 'german', 'french']}
 						/>
