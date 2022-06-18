@@ -1,5 +1,6 @@
 import { Listbox } from '@headlessui/react';
 import { useState } from 'react';
+import { HiSelector } from 'react-icons/hi';
 
 interface Props {
 	label: string;
@@ -35,8 +36,9 @@ const Dropdown = ({ label, options }: { label: string; options: string[] }) => {
 			as='div'
 			className='relative w-full'
 		>
-			<Listbox.Button className='peer w-full rounded-lg border-2 border-zinc-100 bg-zinc-100 px-3 pt-4 pb-1 text-left font-medium capitalize text-zinc-700 placeholder-transparent focus:border-2 focus:border-violet-500 focus:bg-white focus:outline-none'>
-				{selectedOption}
+			<Listbox.Button className='peer flex w-full items-center justify-between rounded-lg border-2 border-zinc-100  bg-zinc-100 text-left font-medium capitalize text-zinc-700 placeholder-transparent focus:border-2 focus:border-violet-500 focus:bg-white focus:outline-none'>
+				<span className='px-3 pt-4 pb-1'>{selectedOption}</span>
+				<HiSelector className='mr-2 h-5 w-5 text-zinc-400' aria-hidden='true' />
 			</Listbox.Button>
 			<Listbox.Label className='absolute left-3 top-1 cursor-text text-xs capitalize text-zinc-600  transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:left-3  peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-focus:top-1 peer-focus:left-3 peer-focus:text-xs'>
 				{label}
@@ -46,7 +48,7 @@ const Dropdown = ({ label, options }: { label: string; options: string[] }) => {
 					<Listbox.Option
 						key={option}
 						value={option}
-						className='relative cursor-pointer select-none py-2 px-3 capitalize text-zinc-700'
+						className='relative cursor-pointer select-none rounded-lg border-2 border-transparent py-2 px-3 capitalize text-zinc-700 hover:border-2 hover:border-violet-500'
 					>
 						{option}
 					</Listbox.Option>
