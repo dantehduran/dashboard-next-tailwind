@@ -28,7 +28,7 @@ const Team: NextPage = () => {
 				<h2 className=' text-3xl font-bold text-zinc-700'>Team Members</h2>
 				<button
 					type='button'
-					className='rounded-xl bg-violet-600  px-3 py-2 font-semibold text-zinc-100'
+					className='rounded-lg bg-violet-600  px-3 py-2 font-semibold text-zinc-100'
 				>
 					Add Member
 				</button>
