@@ -49,17 +49,21 @@ const links: Link[] = [
 		Icon: () => <BiSpreadsheet className='h-6 w-6 shrink-0' />,
 	},
 	{
-		label: 'Settings',
+		label: 'Pages',
 		Icon: () => <BiCog className='h-6 w-6 shrink-0' />,
 		route: '/settings',
 		sublinks: [
 			{
-				label: 'Profile',
-				route: '/settings/profile',
+				label: 'Sign In',
+				route: '/pages/signin',
 			},
 			{
-				label: 'Config',
-				route: '/settings/config',
+				label: 'Sign Out',
+				route: '/pages/signout',
+			},
+			{
+				label: '404',
+				route: '/pages/notfound',
 			},
 		],
 	},

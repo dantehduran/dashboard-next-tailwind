@@ -3,12 +3,14 @@ import Sidebar from '@/components/sidebar/Sidebar';
 import { BiMenu } from 'react-icons/bi';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import { useSidebar } from '@/context/uiStore';
+import { useRouter } from 'next/router';
 
 type DashboardLayoutProps = {
 	children: React.ReactNode;
 };
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+	const { pathname } = useRouter();
 	const {
 		isSidebarCollapsed,
 		setIsSidebarCollapsed,
@@ -19,6 +21,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 	useEffect(() => {
 		if (breakpoint !== 'md' && breakpoint !== 'sm') setIsSidebarOpen(false);
 	}, [breakpoint]);
+	if (pathname === '/pages/notfound') return children;
 	return (
 		<div
 			className={`relative flex h-screen space-x-4 overflow-hidden bg-white p-2 ${
