@@ -54,8 +54,8 @@ const links: Link[] = [
 		route: '/settings',
 		sublinks: [
 			{
-				label: 'Sign In',
-				route: '/pages/signin',
+				label: 'Register',
+				route: '/pages/register',
 			},
 			{
 				label: 'Login',

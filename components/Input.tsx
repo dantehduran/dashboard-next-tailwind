@@ -4,13 +4,14 @@ import { HiSelector } from 'react-icons/hi';
 
 interface Props {
 	label: string;
+	type?: string;
 }
 
-const Input = ({ label }: Props) => {
+const Input = ({ label, type = 'text' }: Props) => {
 	return (
 		<div className='relative w-full'>
 			<input
-				type='text'
+				type={type}
 				id={label.replace(/\s+/g, '-')}
 				autoComplete='new-password'
 				placeholder={label}

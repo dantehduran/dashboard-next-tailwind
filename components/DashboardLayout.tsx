@@ -9,7 +9,11 @@ type DashboardLayoutProps = {
 	children: React.ReactNode;
 };
 
-const PAGESWITHOUTLAYOUT = ['/pages/notfound', '/pages/signin', '/pages/login'];
+const PAGESWITHOUTLAYOUT = [
+	'/pages/notfound',
+	'/pages/register',
+	'/pages/login',
+];
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 	const { pathname } = useRouter();
