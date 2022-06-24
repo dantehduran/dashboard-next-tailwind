@@ -58,8 +58,8 @@ const links: Link[] = [
 				route: '/pages/signin',
 			},
 			{
-				label: 'Sign Out',
-				route: '/pages/signout',
+				label: 'Login',
+				route: '/pages/login',
 			},
 			{
 				label: '404',

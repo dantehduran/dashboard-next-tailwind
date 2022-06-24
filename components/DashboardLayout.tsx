@@ -9,6 +9,8 @@ type DashboardLayoutProps = {
 	children: React.ReactNode;
 };
 
+const PAGESWITHOUTLAYOUT = ['/pages/notfound', '/pages/signin', '/pages/login'];
+
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 	const { pathname } = useRouter();
 	const {
@@ -21,7 +23,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 	useEffect(() => {
 		if (breakpoint !== 'md' && breakpoint !== 'sm') setIsSidebarOpen(false);
 	}, [breakpoint]);
-	if (pathname === '/pages/notfound') return children;
+	if (PAGESWITHOUTLAYOUT.includes(pathname)) return children;
 	return (
 		<div
 			className={`relative flex h-screen space-x-4 overflow-hidden bg-white p-2 ${
