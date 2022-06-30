@@ -13,6 +13,7 @@ const PAGESWITHOUTLAYOUT = [
 	'/pages/notfound',
 	'/pages/register',
 	'/pages/login',
+	'/404',
 ];
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {

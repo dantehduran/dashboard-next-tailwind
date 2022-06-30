@@ -6,13 +6,13 @@ const Register: NextPage = () => {
 	const router = useRouter();
 	return (
 		<div className='flex h-screen flex-col items-center justify-center bg-zinc-800'>
-			<div className='w-full rounded-lg bg-white py-4 px-6 md:w-2/5'>
+			<div className='w-full rounded-lg bg-white py-4 px-6 shadow-md shadow-violet-400 md:w-2/5'>
 				<div className='flex flex-col gap-4'>
 					<h3 className='mb-4 text-xl font-bold text-violet-600'>
 						Set up your account
 					</h3>
 					<Input label='full name' />
-					<Input label='email' />
+					<Input label='email' type='email' />
 					<Input label='password' type='password' />
 					<Input label='confirm password' type='password' />
 					<div className='flex items-center'>

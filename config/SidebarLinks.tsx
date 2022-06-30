@@ -63,7 +63,7 @@ const links: Link[] = [
 			},
 			{
 				label: '404',
-				route: '/pages/notfound',
+				route: '/404',
 			},
 		],
 	},
