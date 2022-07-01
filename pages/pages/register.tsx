@@ -55,7 +55,7 @@ const Register: NextPage = () => {
 					<span className='text-center text-sm text-zinc-400'>
 						Do you already have an account?{' '}
 						<button
-							className=' text-violet-800'
+							className=' text-violet-600'
 							onClick={() => router.push('/pages/login')}
 						>
 							Log in
