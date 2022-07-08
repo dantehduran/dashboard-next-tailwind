@@ -1,10 +1,12 @@
 import Card from '@/components/Card';
+import { BarChart } from '@/components/chart/BarChart';
+import { DoughnutChart } from '@/components/chart/DoughnutChart';
 import type { NextPage } from 'next';
 import { BiAlbum, BiBarChart, BiDiamond, BiDollar } from 'react-icons/bi';
 
 const Home: NextPage = () => {
 	return (
-		<div className='flex flex-col p-4'>
+		<div className='flex flex-col gap-6 p-4'>
 			<div className='grid grid-cols-2 gap-6 lg:grid-cols-4'>
 				<Card
 					label='all spending'
@@ -30,6 +32,27 @@ const Home: NextPage = () => {
 					color='bg-orange-100'
 					icon={() => <BiAlbum className='h-8 w-8 text-orange-600' />}
 				/>
+			</div>
+			<div className='grid grid-cols-1 gap-6 md:grid-cols-7'>
+				<div className='col-span-4 h-min rounded-lg border-2 border-zinc-200 p-4'>
+					<div className='mb-4 flex flex-col'>
+						<span className='text-lg font-semibold capitalize text-zinc-600'>
+							total spent
+						</span>
+						<span className='text-2xl font-bold text-violet-600'>$965</span>
+					</div>
+					<div className='py-4'>
+						<BarChart />
+					</div>
+				</div>
+				<div className='col-span-3  flex h-min flex-col rounded-lg border-2 border-zinc-200 p-4'>
+					<span className='mb-3 text-lg font-semibold capitalize text-zinc-600'>
+						Analytics
+					</span>
+					<div className='px-10'>
+						<DoughnutChart />
+					</div>
+				</div>
 			</div>
 		</div>
 	);
