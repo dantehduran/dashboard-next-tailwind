@@ -11,7 +11,7 @@ interface UIStore {
 
 const useSidebar = create<UIStore>(set => ({
 	isSidebarOpen: false,
-	isSidebarCollapsed: true,
+	isSidebarCollapsed: false,
 	toggleSidebarOpen: () =>
 		set(state => ({ isSidebarOpen: !state.isSidebarOpen })),
 	toggleSidebarCollapsed: () =>

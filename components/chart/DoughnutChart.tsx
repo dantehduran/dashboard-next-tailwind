@@ -5,6 +5,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const options = {
 	responsive: true,
+	maintainAspectRatio: false,
 	plugins: {
 		legend: {
 			display: true,

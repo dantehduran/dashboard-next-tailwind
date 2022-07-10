@@ -41,15 +41,15 @@ const Home: NextPage = () => {
 						</span>
 						<span className='text-2xl font-bold text-violet-600'>$965</span>
 					</div>
-					<div className='py-4'>
+					<div className=''>
 						<BarChart />
 					</div>
 				</div>
-				<div className='col-span-3  flex h-min flex-col rounded-lg border-2 border-zinc-200 p-4'>
+				<div className='col-span-3  flex  flex-col rounded-lg border-2 border-zinc-200 p-4'>
 					<span className='mb-3 text-lg font-semibold capitalize text-zinc-600'>
 						Analytics
 					</span>
-					<div className='px-10'>
+					<div className=' h-80 '>
 						<DoughnutChart />
 					</div>
 				</div>
