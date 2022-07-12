@@ -39,7 +39,7 @@ export const data = {
 	datasets: [
 		{
 			label: 'Total Spent',
-			data: labels.map(() => Math.floor(Math.random() * 100) + 1),
+			data: [10, 4, 63, 25, 80, 70, 23],
 			backgroundColor: 'rgb(124, 58, 237)',
 			borderRadius: 8,
 		},

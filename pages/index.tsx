@@ -41,7 +41,7 @@ const Home: NextPage = () => {
 						</span>
 						<span className='text-2xl font-bold text-violet-600'>$965</span>
 					</div>
-					<div className=''>
+					<div className='h-80'>
 						<BarChart />
 					</div>
 				</div>
