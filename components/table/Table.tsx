@@ -16,9 +16,6 @@ const Table = ({ data, headers }: Props) => {
 								{header}
 							</th>
 						))}
-						<th scope='col' className='px-6 py-3 text-center'>
-							Options
-						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -29,12 +26,6 @@ const Table = ({ data, headers }: Props) => {
 									{value}
 								</td>
 							))}
-
-							<td className='text-center md:px-6 md:py-4'>
-								<span className='font-medium text-blue-600 hover:underline '>
-									Edit
-								</span>
-							</td>
 						</tr>
 					))}
 				</tbody>

@@ -1,9 +1,26 @@
 import Card from '@/components/Card';
 import { BarChart } from '@/components/chart/BarChart';
 import { DoughnutChart } from '@/components/chart/DoughnutChart';
+import { Table } from '@/components/table';
+import { data, headers } from '@/config/TableData';
 import type { NextPage } from 'next';
 import { BiAlbum, BiBarChart, BiDiamond, BiDollar } from 'react-icons/bi';
 
+const newUsers = [
+	{
+		name: 'jhon doe',
+		email: 'jdoe@gmail.com',
+	},
+	{
+		name: 'emily wang',
+		email: 'emi@gmail.com',
+	},
+	{
+		name: 'matt ross',
+		email: 'mattrss@gmail.com',
+	},
+];
+const userHeaders = ['name', 'email'];
 const Home: NextPage = () => {
 	return (
 		<div className='flex flex-col gap-6 p-4'>
@@ -34,7 +51,7 @@ const Home: NextPage = () => {
 				/>
 			</div>
 			<div className='grid grid-cols-1 gap-6 md:grid-cols-7'>
-				<div className='col-span-4 h-min rounded-lg border-2 border-zinc-200 p-4'>
+				<div className='col-span-4 h-min  p-4'>
 					<div className='mb-4 flex flex-col'>
 						<span className='text-lg font-semibold capitalize text-zinc-600'>
 							total spent
@@ -45,12 +62,30 @@ const Home: NextPage = () => {
 						<BarChart />
 					</div>
 				</div>
-				<div className='col-span-3  flex  flex-col rounded-lg border-2 border-zinc-200 p-4'>
+				<div className='col-span-3  flex  flex-col  p-4'>
 					<span className='mb-3 text-lg font-semibold capitalize text-zinc-600'>
 						Analytics
 					</span>
 					<div className=' h-80 '>
 						<DoughnutChart />
+					</div>
+				</div>
+			</div>
+			<div className='grid grid-cols-1 gap-6 md:grid-cols-7'>
+				<div className='col-span-4  p-4'>
+					<span className=' text-lg font-semibold capitalize text-zinc-600'>
+						Recent Orders
+					</span>
+					<div className='mt-3'>
+						<Table data={data.slice(0, 5)} headers={headers} />
+					</div>
+				</div>
+				<div className='col-span-3  p-4'>
+					<span className='mb-3 text-lg font-semibold capitalize text-zinc-600'>
+						New users
+					</span>
+					<div className='mt-3 '>
+						<Table data={newUsers} headers={userHeaders} />
 					</div>
 				</div>
 			</div>
